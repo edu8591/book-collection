@@ -1,0 +1,16 @@
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Author</th>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <td><%= book.name %></td>
+      <td><%= book.author %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add book', new_book_path %>

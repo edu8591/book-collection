@@ -1,0 +1,17 @@
+<p><%= flash[:notice] %></p>
+
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Author</th>
+  </thead>
+  <tbody>
+    <td><%= @book.name %> </td>
+    <td><%= @book.author %> </td>
+  </tbody>
+
+</table>
+
+<%= link_to "edit_book_#{@book.id}", edit_book_path(@book) %>

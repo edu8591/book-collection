@@ -4,11 +4,13 @@
   <thead>
     <th>Name</th>
     <th>Author</th>
+    <th>Action</th>
   </thead>
   <tbody>
     <% @books.each do |book| %>
       <td><%= book.name %></td>
       <td><%= book.author %></td>
+      <td><%= link_to "edit_book_#{book.id}", edit_book_path(book) %></td> </td>
     <% end %>
   </tbody>
 </table>

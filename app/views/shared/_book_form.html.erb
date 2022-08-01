@@ -1,0 +1,5 @@
+<%= form_with model: book do |f| %>
+  <%= f.text_field :name, placeholder: 'book name'%>
+  <%= f.text_field :author, placeholder: 'book author'%>
+  <%= f.submit 'save' %>
+<% end %>

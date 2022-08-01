@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render 'shared/notice', notice: flash unless flash.empty? %>
     <%= yield %>
   </body>
 </html>

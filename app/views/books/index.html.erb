@@ -1,18 +1,25 @@
+ <% unless flash.empty? %>
+  <p><%=flash[:notice]%></p>
+ <% end %>
 <h1>Books</h1>
 
 <table>
   <thead>
     <th>Name</th>
     <th>Author</th>
-    <th>Action</th>
+    <th>Actions</th>
   </thead>
   <tbody>
     <% @books.each do |book| %>
+    <tr>
       <td><%= book.name %></td>
       <td><%= book.author %></td>
-      <td><%= link_to "edit_book_#{book.id}", edit_book_path(book) %></td> </td>
+      <td><%= link_to "edit_book_#{book.id}", edit_book_path(book) %>
+      <%= link_to "delete_book_#{book.id}", book_path(book), data:{turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Add book', new_book_path %>
+<%= link_to 'Add book', new_book_path%>

@@ -1,5 +1,21 @@
+<div class="row d-flex justify-content-center">
+  <h2 class="col-4 text-center"><%= @book.persisted? ? 'Edit Book': 'New book' %></h2>
+</div>
+
+
+
 <%= form_with model: book do |f| %>
-  <%= f.text_field :name, placeholder: 'book name'%>
-  <%= f.text_field :author, placeholder: 'book author'%>
-  <%= f.submit 'save' %>
+<div class="row mb-2 justify-content-between">
+  <div class="col-6">
+      <%= f.label :name, class:'ps-3'%>
+      <%= f.text_field :name, placeholder: 'book name', class:'form-control'%>
+  </div>
+  <div class="col-6">
+    <%= f.label :author, class:'ps-3' %>
+    <%= f.text_field :author, placeholder: 'book author', class:'form-control'%>
+  </div>
+</div>
+<div class="row justify-content-center mx-0">
+  <%= f.submit 'save', class:'btn btn-primary ' %>
+</div>
 <% end %>

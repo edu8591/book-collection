@@ -1,15 +1,27 @@
-<h1>Books</h1>
+<div class="row d-flex justify-content-center">
+  <h2 class="col-4 text-center">Book's view</h2>
+</div>
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Author</th>
-  </thead>
-  <tbody>
-    <td><%= @book.name %> </td>
-    <td><%= @book.author %> </td>
-  </tbody>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row"><%= @book.name%></td>
+        <td><%= @book.author %></td>
+      </tr>
+    </tbody>
+  </table>
 
-</table>
-
-<%= link_to "edit_book_#{@book.id}", edit_book_path(@book) %>
+<div class="row justify-content-around">
+  <div class="col-4">
+  <%= link_to "edit_book_#{@book.id}", edit_book_path(@book),class:'btn btn-primary'%>
+  </div>
+  <div class="col-4">
+  <%= link_to "View all books", books_path ,class:'btn btn-primary'%>
+  </div>
+</div>
